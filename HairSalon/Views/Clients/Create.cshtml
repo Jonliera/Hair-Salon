@@ -6,14 +6,16 @@
 
 <h4>Add a new Client</h4>
 
+<p><strong>NOTE:</strong>You need to at least create one Stylist before you can add a Clients!</p>
+<p>Got to @Html.ActionLink("this page", "Create", "Stylist") to create a Stylist</p>
+
 @using (Html.BeginForm())
 {
   @Html.LabelFor(model => model.Name)
   @Html.TextBoxFor(model => model.Name)
   
-  
-  @* @Html.LabelFor(model => model.Stylist)
-  @Html.DropDownList("StylistId") *@
+  @Html.LabelFor(model => model.Stylist)
+  @Html.DropDownList("StylistId") 
 
   <input type="submit" value="Add new client" class="btn btn-default"/>
 }
