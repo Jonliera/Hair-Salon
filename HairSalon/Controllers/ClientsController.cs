@@ -10,13 +10,13 @@ namespace HairSalon.Controllers
   public class ClientsController : Controller
   {
     private readonly HairSalonContext _db;
-    public ClientsController(HairSalonContext _db)
+    public ClientsController(HairSalonContext db)
     {
-      _db = _db;
+      _db = db;
     }
     public ActionResult Index()
     {
-      List<Client> model = _db.items.Include(client => client.Stylist).ToList();
+      List<Client> model = _db.Clients.Include(client => client.Stylist).ToList();
       return View(model);
     }
     public ActionResult Create()

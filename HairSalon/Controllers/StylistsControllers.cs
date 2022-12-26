@@ -23,7 +23,7 @@ namespace HairSalon.Controllers
     {
       return View();
     }
-    [HttPost]
+    [HttpPost]
     public ActionResult Create (Stylist stylist)
     {
       _db.Stylists.Add(stylist);
