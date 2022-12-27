@@ -23,7 +23,7 @@ namespace HairSalon.Controllers
     }
     public ActionResult Create()
     {
-      ViewBag.StylistId = new SelectList(_db.Stylists, "StylistID", "Name");
+      ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
       return View();
     }
     [HttpPost]
@@ -50,8 +50,7 @@ namespace HairSalon.Controllers
       ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId","Name");
       return View(thisClient);
     }
-    [HttpPost]
-    public ActionResult Edit(Client client)
+    [HttpPost]    public ActionResult Edit(Client client)
     {
       _db.Clients.Update(client);
       _db.SaveChanges();
